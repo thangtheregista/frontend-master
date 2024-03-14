@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./assets/shared/logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <header className="primary-header flex">
+        <div>
+          <img src={logo} alt="logo" className="logo" />
+        </div>
+        <button
+          className="mobile-nav-toggle"
+          aria-controls="primary-navigation"
         >
-          Learn React
-        </a>
+          <span className="sr-only" aria-expanded="false">
+            Menu
+          </span>
+        </button>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            className="primary-navigation underline-indicators flex"
+          >
+            <li className="active"></li>
+          </ul>
+        </nav>
       </header>
     </div>
   );
